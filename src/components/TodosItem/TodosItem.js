@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import classes from "./TodosItem.module.scss";
 import SwitchToggle from "../SwitchToggle/SwitchToggle";
 import DataPicker from "../DataPicker/DataPicker";

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState} from 'react';
 import classes from "./TodosFilterAndForm.module.scss";
 
 const TodosForm = ({onSubmit}) => {
@@ -9,7 +9,6 @@ const TodosForm = ({onSubmit}) => {
     onSubmit(taskName)
     setTaskName("")
   }
-
 
   return (
     <form onSubmit={submitHandler} className={`${classes.search_form} animate__animated animate__zoomIn animate__fast`}>

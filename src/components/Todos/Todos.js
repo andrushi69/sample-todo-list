@@ -9,11 +9,7 @@ import TotalTasks from "../TotalTasks/TotalTasks";
 
 
 const Todos = () => {
-  const [todos, setTodos] = useState(() => {
-    const saved = localStorage.getItem("todos");
-    const initialValue = JSON.parse(saved);
-    return initialValue || "";
-  })
+  const [todos, setTodos] = useState([])
   const [showModal, setShowModal] = useState(false)
   const [taskId, setTaskId] = useState()
   const [filter, setFilter] = useState("")
@@ -23,7 +19,14 @@ const Todos = () => {
     total: "",
     totalCompleted: ""
   })
+  useEffect(() => {
+    const todos = localStorage.getItem('todos');
+    const parsedTodos = JSON.parse(todos);
 
+    if (parsedTodos) {
+      setTodos(parsedTodos)
+    }
+  }, [])
   const addTodo = (text) => {
     const todo = {
       id: uuid(),
@@ -39,7 +42,9 @@ const Todos = () => {
       setDuplicateError(filterArray)
       return filterArray.length !== 0 ? "" : setTodos(todos.concat(todo))
     }
+    setTodos(todos.concat(todo))
   }
+
 
   const deleteTodo = (todoId) => {
     setTodos(todos.filter(({id}) => id !== todoId))
@@ -60,9 +65,9 @@ const Todos = () => {
   }
   const getTodosByFilter = () => {
     const normalizedFilter = filter.toLowerCase();
-    return todos.filter(({text, completed}) =>
-      text.includes(normalizedFilter)
-    );
+    return todos.filter(({text}) =>
+      text.toLowerCase().includes(normalizedFilter)
+    )
   }
   const onToggleDeadLineInfo = (id) => {
     setTodos(todos.map(item =>
@@ -79,12 +84,11 @@ const Todos = () => {
       item.id === id ? {...item, deadLine: item.deadLine.concat(deadLineInfo)} : item
     ))
   }
-  const editText = (id, text) => {
-    setTodos(todos.map(item=>
-    item.id === id ? {...item, text: text} : item,
-    ))
-    console.log(todos)
-  }
+  // const editText = (id, text) => {
+  //   setTodos(todos.map(item=>
+  //   item.id === id ? {...item, text: text} : item,
+  //   ))
+  // }
 
   useEffect(() => {
     if (todos) {
@@ -125,9 +129,9 @@ const Todos = () => {
       {todos.length < 1 ? "" :
         <TotalTasks totalTask={totalTask.total} totalTaskCompleted={totalTask.totalCompleted}/>}
       <TodosList
-        editText={(...props)=>{
-          editText(...props)
-        }}
+        // editText={(...props)=>{
+        //   editText(...props)
+        // }}
         addDeadLine={(...props) => {
           addDeadLine(...props)
         }}

@@ -8,7 +8,7 @@ const Header = () => {
       <h1>Do your todo 🙃</h1>
       <div className={classes.header_link}>
         <p>Created by</p>
-        <a target="_blank" href={"https://github.com/andrushi69/"}><SVG width={25} height={25} src={"./svg/gitHub.svg"}/></a>
+        <a rel="noreferrer" target="_blank" href={"https://github.com/andrushi69/"}><SVG width={25} height={25} src={"./svg/gitHub.svg"}/></a>
       </div>
 
     </header>

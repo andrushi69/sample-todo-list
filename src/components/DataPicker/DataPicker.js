@@ -12,7 +12,7 @@ const DataPicker = ({onToggleDeadLineInfo, item, addDeadLine}) => {
       onToggleDeadLineInfo(item.id)
     }
 
-  }, [startDate])
+  }, [startDate, item.id, onToggleDeadLineInfo])
 
   const ExampleCustomInput = forwardRef(({value, onClick}, ref) => (
     <button className={classes.custom_date_picker} onClick={onClick} ref={ref}>
