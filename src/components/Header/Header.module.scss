@@ -1,0 +1,36 @@
+@import '../../../styles/colors/colors_variables';
+
+.header_section {
+  display: flex;
+  width: 95%;
+  margin: 5px auto 15px;
+  justify-content: space-between;
+  height: 50px;
+  align-items: center;
+
+
+  h1 {
+    color: $header-text-color;
+    margin: 0;
+  }
+
+  .header_link {
+    display: flex;
+    align-items: center;
+
+    p {
+      color: $header-text-color;
+      margin: 0;
+      font-weight: bold;
+    }
+
+    svg {
+      margin-left: 10px;
+
+      * {
+        fill: $header-text-color;
+      }
+    }
+  }
+
+}

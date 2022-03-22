@@ -1,0 +1,73 @@
+@import '../../../styles/colors/colors_variables';
+
+.filter_form, .search_form {
+  position: relative;
+  padding: 15px 0 0;
+  width: 40%;
+  display: flex;
+
+  button {
+    margin-left: 20px;
+    background-color: transparent;
+    outline: none;
+    border: 2px solid $form-and-filter-btn-border-cr;
+    border-radius: 4px;
+
+    span {
+      color: $form-and-filter-btn-cr;
+    }
+  }
+}
+
+.input_field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  z-index: 10;
+  border-bottom: 2px solid $form-and-filter-input-border-and-text-cr;
+  outline: 0;
+  font-size: 1.3rem;
+  color: $form-and-filter-input-border-and-text-cr;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .input_label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+    font-weight: 600;
+  }
+}
+
+.input_label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s ease-in-out;
+  font-size: 1rem;
+  color: $form-and-filter-label-text-cr;
+}
+
+.input_field:focus {
+  ~ .input_label {
+    position: absolute;
+    top: 0;
+    display: block;
+    font-size: 1rem;
+    color: $form-and-filter-label-text-after-focus-cr;
+    font-weight: 700;
+    transition: 0.3s ease-in-out;
+  }
+
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, white, #E0E5F2);
+  border-image-slice: 1;
+
+}

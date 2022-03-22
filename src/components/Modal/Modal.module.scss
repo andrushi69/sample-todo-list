@@ -1,0 +1,81 @@
+@import '../../../styles/colors/colors_variables';
+
+.modal_overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 125;
+  background-color: $modal-overlay-bg-cr;
+  display: flex ;
+  justify-content: center ;
+  align-items: center ;
+  top: 0;
+  left: 0;
+
+  .modal {
+    width: 50%;
+    height: 50%;
+    background-color: $modal-bg-cr;
+    position: relative;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    border-radius: 14px;
+    justify-content: center;
+
+    .modal_content {
+
+      .modal_buttons {
+        display: flex;
+        flex-direction: row;
+        width: 80%;
+        margin: 30px auto 0;
+        justify-content: space-around;
+
+        button {
+          width: 150px;
+          outline: none;
+          background-color: $modal-btn-color;
+          border: none;
+          height: 40px;
+          color: $modal-btn-text-color;
+          border-radius: 14px;
+          font-weight: bold;
+          font-size: 16px;
+          transition: 500ms ease-in-out;
+
+          &:last-child {
+            background-color:$modal-btn-additional-color;
+            color: $modal-btn-additional-text-color;
+          }
+
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+
+      }
+
+      .close_svg {
+        background-color: $modal-bg-svg-cr;
+        padding: 10px;
+        display: flex;
+        border-radius: 50%;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+
+      }
+
+      h1 {
+        color: $modal-title-cr;
+        text-align: center;
+        margin: 0 auto;
+        width: 90%;
+      }
+    }
+
+  }
+
+
+}

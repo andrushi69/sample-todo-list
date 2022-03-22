@@ -1,0 +1,54 @@
+@import '../../../styles/colors/colors_variables';
+
+.date_picker_section {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+
+  div {
+    &:first-child {
+      width: auto;
+    }
+  }
+
+  .date_picker_buttons {
+    display: flex;
+    align-items: center;
+
+    p {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    button {
+      width: 65px;
+      outline: none;
+      border: none;
+      background-color: $date-picker-btn-color;
+      color: $date-picker-btn-text-color;
+      border-radius: 14px;
+      height: 40px;
+      transition: 500ms ease-in-out;
+
+      &:last-child {
+        background-color: $date-picker-btn-additional-color;
+        color: $date-picker-btn-additional-text-color;
+        margin-left: 10px;
+      }
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+.custom_date_picker{
+  background-color: $date-picker-input-bg-color;
+  width: 150px;
+  outline: none;
+  border: none;
+  border-radius: 14px;
+  height: 40px;
+}

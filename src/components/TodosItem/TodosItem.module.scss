@@ -1,0 +1,153 @@
+@import '../../../styles/colors/colors_variables';
+
+.dead_line_for_task {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  height: 65px;
+
+}
+
+.task_text, .task_text_edit, .green, .orange {
+  color: $todos-task-text-cr;
+  font-size: 20px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  outline: none;
+  border: none;
+  cursor: default;
+}
+.task_text_edit{
+  background-color: #E0E5F2;
+  border-radius: 14px;
+  height: 50px;
+  padding: 0 5px;
+}
+
+.green {
+  border-bottom: 2px solid $todos-task-completed-border;
+}
+
+.orange {
+  border-bottom: 2px solid $todos-task-in-process-border;
+}
+
+.item, .complete, .in_process {
+  display: flex;
+  flex-direction: column;
+  border-radius: 14px;
+  padding: 10px;
+  width: 35%;
+  height: 150px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  background-color: $todos-task-bg-cr;
+  box-shadow: 0 4px 10px rgb(152 149 151);
+
+
+  .task_text_and_svg_section, .status_section,.status_section_with_dead_line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: -5;
+    align-items: center;
+    width: 100%;
+
+    .svg_section {
+      display: flex;
+    }
+
+    .duplicate_text {
+      height: 60px;
+      display: flex;
+      align-items: center;
+      color: $todos-task-duplicate-text-cr;
+      font-weight: bold;
+    }
+
+    .edit_svg, .bin_svg {
+      background-color: $todos-task-edit-svg-bg-cr;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .toggle {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      text-align: center;
+      justify-content: space-between;
+      width: 70%;
+
+      span {
+        color: $todos-task-toggle-text-cr;
+        font-weight: bold;
+      }
+    }
+
+  }
+
+  .dead_line_info, .dead_line_info_completed {
+    border-radius: 14px;
+    background-color: $todos-task-deadline-bg-cr;
+    height: 40px;
+    font-weight: bold;
+    color: $todos-task-deadline-text-cr;
+    text-align: center;
+    display: flex;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+  }
+
+  .dead_line_info_completed {
+    filter: blur(2px);
+  }
+
+  .status_section {
+    justify-content: center;
+    height: 50px;
+    margin-top: 10px;
+
+
+  }
+
+  .status_section_with_dead_line {
+    justify-content: center;
+  }
+
+  .edit_svg {
+    margin-right: 15px;
+  }
+
+  .start_btn {
+    width: 70%;
+    height: 50px;
+    border: none;
+    border-radius: 14px;
+    outline: none;
+    background-color: $todos-task-start-btn-bg-cr;
+    font-weight: bold;
+    transition: 500ms ease-in-out;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.complete {
+  box-shadow: -1px 1px 13px 10px $todos-task-completed-box-shadow;
+}
+
+.in_process {
+  box-shadow: -1px 1px 13px 10px $todos-task-in-process-border-box-shadow;
+}

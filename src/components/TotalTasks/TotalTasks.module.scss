@@ -1,0 +1,14 @@
+@import '../../../styles/colors/colors_variables';
+
+.total_completed_process {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 15px auto 0;
+
+  span {
+    font-weight: bold;
+    color: $todos-total-task-cr;
+    line-height: 25px;
+  }
+}
